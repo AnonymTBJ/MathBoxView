@@ -6,5 +6,5 @@
 	}
   
   	dependencies {
-	        compile 'com.github.AnonymTBJ:MathBoxView:v1.1'
+	        compile 'com.github.AnonymTBJ:MathBoxView:v1.2'
 	}
