@@ -73,6 +73,10 @@ public class MathBoxView extends RelativeLayout {
             number.setTextSize(textSize);
         }
     }
+	
+	public void setTextColor(int color){
+		number.setTextColor(color);
+	}
 
     public void setBackdropResource(int resId){
         backdrop.setImageResource(resId);
