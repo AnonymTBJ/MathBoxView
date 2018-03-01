@@ -69,7 +69,8 @@ public class MathBoxView extends RelativeLayout {
                     break;
             }
         }else{
-            number.setText(text);
+            number.setText(this.text);
+            number.setTextSize(textSize);
         }
     }
 
@@ -185,9 +186,9 @@ public class MathBoxView extends RelativeLayout {
         view.post(new Runnable() {
             @Override
             public void run() {
-                ObjectAnimator objectAnimator1 = ObjectAnimator.ofFloat(number,"translationY",0,getWidth());
+                ObjectAnimator objectAnimator1 = ObjectAnimator.ofFloat(number,"translationY",0,getHeight());
                 ObjectAnimator objectAnimator2 = ObjectAnimator.ofFloat(number,"alpha",1f,0f);
-                ObjectAnimator objectAnimator3 = ObjectAnimator.ofFloat(number,"translationY",-(getWidth()),0);
+                ObjectAnimator objectAnimator3 = ObjectAnimator.ofFloat(number,"translationY",-(getHeight()),0);
                 ObjectAnimator objectAnimator4 = ObjectAnimator.ofFloat(number,"alpha",0f,1f);
 
                 final AnimatorSet animatorSet = new AnimatorSet();
