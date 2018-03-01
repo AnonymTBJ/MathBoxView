@@ -50,8 +50,12 @@ public class MathBoxView extends RelativeLayout {
         number.setTextSize(textSize);
     }
 
-    public void setText(String text, boolean animplay){
-        this.text = text;
+    public void setText(int text, boolean animplay){
+        if(text>=0 && text<=9){
+            this.text = "0" + text;
+        }else{
+            this.text = "" + text;
+        }
         if(animplay){
             switch (mathBoxAnim){
                 case CENTER:
@@ -64,6 +68,8 @@ public class MathBoxView extends RelativeLayout {
                     AnimDOWN();
                     break;
             }
+        }else{
+            number.setText(text);
         }
     }
 
@@ -95,6 +101,10 @@ public class MathBoxView extends RelativeLayout {
     public void setAnimDouble(double animDouble){
         this.animDouble = animDouble;
     }
+	
+    public void setAnimStyle(MathBoxAnim mathBoxAnim){
+        this.mathBoxAnim = mathBoxAnim;
+    }	
 
     private void AnimCENTER(){
         new CountDownTimer(animSpeed*animQuantity[0],animSpeed){
